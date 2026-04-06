@@ -2,7 +2,7 @@ package labactivity;
 
 // Invoice.java
 // Notice Invoice does NOT inherit from Employee. They are unrelated.
-public class Invoice implements Payable {
+public class Invoice implements IPayable {
     private String partNumber;
     private int quantity;
     private double pricePerItem;
@@ -13,9 +13,9 @@ public class Invoice implements Payable {
         this.pricePerItem = price;
     }
 
-    @Override
     public double getPaymentAmount() {
         return quantity * pricePerItem;
     }
+
 }
 

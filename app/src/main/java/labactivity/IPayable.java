@@ -1,6 +1,6 @@
 package labactivity;
 
-public interface Payable {
+public interface IPayable {
     // Methods in interfaces are implicitly public and abstract
     double getPaymentAmount(); 
 }

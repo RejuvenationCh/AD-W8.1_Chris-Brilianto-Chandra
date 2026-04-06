@@ -1,6 +1,6 @@
 package labactivity;
 
-public abstract class Employee implements Payable {
+public abstract class Employee implements IPayable {
     private String name;
     private String employeeId;
 
