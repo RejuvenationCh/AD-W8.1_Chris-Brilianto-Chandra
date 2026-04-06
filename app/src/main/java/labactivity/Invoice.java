@@ -12,7 +12,8 @@ public class Invoice implements IPayable {
         this.quantity = qty;
         this.pricePerItem = price;
     }
-
+    
+    @Override
     public double getPaymentAmount() {
         return quantity * pricePerItem;
     }

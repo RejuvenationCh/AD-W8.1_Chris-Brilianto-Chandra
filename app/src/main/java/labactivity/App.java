@@ -14,13 +14,16 @@ public class App {
     public static void main(String[] args) {
          // We create a list of the INTERFACE type
         List<IPayable> accountsPayable = new ArrayList<>();
+        List<IIdentifiable> accountIdentifier = new ArrayList<>();
 
         // Add unrelated objects to the same list
         accountsPayable.add(new SalariedEmployee("Alice Smith", "E001", 1200.00));
-        accountsPayable.add(new Invoice("Widget-99", 5, 20.00, 10.00));
+        accountsPayable.add(new Invoice("Widget-99", 5, 20.00));
 
         accountsPayable.add(new HourlyPaidEmployee("Bob Jones", "E002", 1500.00, 10.00));
-        accountsPayable.add(new Invoice("Hammer-01", 2, 15.50,100.00));
+        accountsPayable.add(new Invoice("Hammer-01", 2, 15.50));
+
+        accountIdentifier.add(new DebitCards("Alan Walker", "4532881900234412"));
 
         System.out.println("Processing Payments:\n---------------------");
 
@@ -28,6 +31,11 @@ public class App {
             // Polymorphism: Java knows which version of getPaymentAmount() to call!
             System.out.printf("Payment due: $%.2f%n", item.getPaymentAmount());
         }
+
+        for (IIdentifiable entities : accountIdentifier){
+            System.out.println("Type: " + entities.getClass().getSimpleName() + " | Global ID: " + entities.getUniqueIdentifier());
+        }
+        }
     }
- }
+ 
 
